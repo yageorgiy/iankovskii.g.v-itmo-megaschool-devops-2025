@@ -1,0 +1,54 @@
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+2025-03-19 16:29:24.965 | INFO     | app:startup:11 - Running time server
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+INFO:     172.17.0.1:48132 - "GET / HTTP/1.1" 404 Not Found
+INFO:     172.17.0.1:48132 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     172.17.0.1:50956 - "GET / HTTP/1.1" 404 Not Found
+INFO:     172.17.0.1:50956 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     172.17.0.1:50956 - "GET /swagger HTTP/1.1" 404 Not Found
+INFO:     172.17.0.1:50956 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+
+
+2025-03-19 19:30:00 Traceback (most recent call last):
+2025-03-19 19:30:00   File "/usr/local/bin/uvicorn", line 8, in <module>
+2025-03-19 19:30:00     sys.exit(main())
+2025-03-19 19:30:00   File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1130, in __call__
+2025-03-19 19:30:00     return self.main(*args, **kwargs)
+2025-03-19 19:30:00   File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1055, in main
+2025-03-19 19:30:00     rv = self.invoke(ctx)
+2025-03-19 19:30:00   File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1404, in invoke
+2025-03-19 19:30:00     return ctx.invoke(self.callback, **ctx.params)
+2025-03-19 19:30:00   File "/usr/local/lib/python3.10/site-packages/click/core.py", line 760, in invoke
+2025-03-19 19:30:00     return __callback(*args, **kwargs)
+2025-03-19 19:30:00   File "/usr/local/lib/python3.10/site-packages/uvicorn/main.py", line 404, in main
+2025-03-19 19:30:00     run(
+2025-03-19 19:30:00   File "/usr/local/lib/python3.10/site-packages/uvicorn/main.py", line 569, in run
+2025-03-19 19:30:00     server.run()
+2025-03-19 19:30:00   File "/usr/local/lib/python3.10/site-packages/uvicorn/server.py", line 60, in run
+2025-03-19 19:30:00     return asyncio.run(self.serve(sockets=sockets))
+2025-03-19 19:30:00   File "/usr/local/lib/python3.10/asyncio/runners.py", line 44, in run
+2025-03-19 19:30:00     return loop.run_until_complete(main)
+2025-03-19 19:30:00   File "uvloop/loop.pyx", line 1517, in uvloop.loop.Loop.run_until_complete
+2025-03-19 19:30:00   File "/usr/local/lib/python3.10/site-packages/uvicorn/server.py", line 67, in serve
+2025-03-19 19:30:00     config.load()
+2025-03-19 19:30:00   File "/usr/local/lib/python3.10/site-packages/uvicorn/config.py", line 477, in load
+2025-03-19 19:30:00     self.loaded_app = import_from_string(self.app)
+2025-03-19 19:30:00   File "/usr/local/lib/python3.10/site-packages/uvicorn/importer.py", line 21, in import_from_string
+2025-03-19 19:30:00     module = importlib.import_module(module_str)
+2025-03-19 19:30:00   File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+2025-03-19 19:30:00     return _bootstrap._gcd_import(name[level:], package, level)
+2025-03-19 19:30:00   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2025-03-19 19:30:00   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2025-03-19 19:30:00   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2025-03-19 19:30:00   File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2025-03-19 19:30:00   File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2025-03-19 19:30:00   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2025-03-19 19:30:00   File "/./app.py", line 8, in <module>
+2025-03-19 19:30:00     import mongo
+2025-03-19 19:30:00   File "/./mongo.py", line 28, in <module>
+2025-03-19 19:30:00     MongoWrapper = _Mongo()
+2025-03-19 19:30:00   File "/./mongo.py", line 10, in __init__
+2025-03-19 19:30:00     raise IOError('MONGODB_CONN_STR not specified')
+2025-03-19 19:30:00 OSError: MONGODB_CONN_STR not specified
